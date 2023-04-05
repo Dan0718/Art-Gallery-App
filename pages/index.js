@@ -10,5 +10,16 @@ function HomePage({ artPieces }) {
   );
 }
 
-export default HomePage;
+export async function getStaticProps() {
+  const res = await fetch("https://example-apis.vercel.app/api/art");
+  const artPieces = await res.json();
 
+  return {
+    props: {
+      artPieces,
+    },
+    revalidate: 60, // Re-fetch the data at most once every 60 seconds.
+  };
+}
+
+export default HomePage;

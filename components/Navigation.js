@@ -1,13 +1,18 @@
-import Link from 'next/link';
+import Link from "next/link";
+
 function Navigation() {
   return (
     <nav>
       <Link href="/">
-        Spotlight
+        <a>Spotlight</a>
       </Link>
-      {' | '}
+      {" | "}
       <Link href="/art-pieces">
-        Pieces
+        <a>Pieces</a>
+      </Link>
+      {" | "}
+      <Link href="/favorites">
+        <a>Favorites</a>
       </Link>
     </nav>
   );
